@@ -19,15 +19,14 @@ describe('Thermostat', function() {
   });
 
   describe('can', function() {
-    it('increase the temperature', function() {
-      thermostat.temp = 10;
-      thermostat.up(5);
+    it('decrease the temperature', function() {
+      thermostat.down(5);
       expect(thermostat.temp).toEqual(15);
     });
   });
 
   describe('can', function() {
-    it('increase the temperature', function() {
+    it('decrease the temperature', function() {
       thermostat.temp = 20;
       thermostat.down(11);
       expect(thermostat.temp).toEqual(10);
