@@ -1,5 +1,6 @@
 function Thermostat() {
   this.temp = 20;
+  this.powerSave = true;
 };
 
 Thermostat.prototype.up = function(num) {

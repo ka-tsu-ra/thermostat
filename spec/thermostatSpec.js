@@ -34,4 +34,10 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('at the start, powersaving mode is', function() {
+    it('on', function() {
+      expect(thermostat.powerSave).toEqual(true);
+    });
+  });
+
 });
