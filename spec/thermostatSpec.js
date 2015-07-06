@@ -69,4 +69,13 @@ describe('Thermostat', function() {
       expect(thermostat.temp).toEqual(32);
     });
   });
+
+  describe('it has a reset button', function() {
+    it('that sets the temp to 20', function() {
+      thermostat.temp = 24;
+      thermostat.reset();
+      expect(thermostat.temp).toEqual(20);
+    });
+  });
+
 });
