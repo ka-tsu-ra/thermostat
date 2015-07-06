@@ -4,7 +4,20 @@ function Thermostat() {
 };
 
 Thermostat.prototype.up = function(num) {
-  this.temp += num;
+  if(this.powerSave) {
+    if(this.temp + num > 25) {
+      this.temp = 25
+    } else {
+      this.temp += num;
+    }
+  } else {
+    if(this.temp + num > 32) {
+      this.temp = 32
+    } else {
+      this.temp += num;
+    }
+  }
+
 };
 
 Thermostat.prototype.down = function(num) {

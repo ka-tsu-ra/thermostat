@@ -55,4 +55,18 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('when in power saving mode', function() {
+    it('has a max temperature of 25', function() {
+      thermostat.up(6);
+      expect(thermostat.temp).toEqual(25);
+    });
+  });
+
+  describe('when not in power saving mode', function() {
+    it('has a max temperature of 32', function() {
+      thermostat.powerSave = false;
+      thermostat.up(14);
+      expect(thermostat.temp).toEqual(32);
+    });
+  });
 });
