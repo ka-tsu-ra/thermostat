@@ -7,8 +7,12 @@ Thermostat.prototype.up = function(num) {
 };
 
 Thermostat.prototype.down = function(num) {
-  this.temp -= num;
-};
+  if ((this.temp - num) < 10) {
+    this.temp = 10;
+  } else {
+    this.temp -= num;
+  }
+}
 
 
 

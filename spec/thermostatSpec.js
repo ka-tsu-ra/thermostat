@@ -21,15 +21,17 @@ describe('Thermostat', function() {
   describe('can', function() {
     it('increase the temperature', function() {
       thermostat.temp = 10
-      thermostat.down(5);
-      expect(thermostat.temp).toEqual(5);
+      thermostat.up(5);
+      expect(thermostat.temp).toEqual(15);
     });
   });
-  //
-  // describe('can set temperature', function() {
-  //   it('up', function() {
-  //     expect(thermostat.set(30)).toEqual('20');
-  //   });
-  // });
-  //
+
+  describe('can', function() {
+    it('increase the temperature', function() {
+      thermostat.temp = 20
+      thermostat.down(11);
+      expect(thermostat.temp).toEqual(10);
+    });
+  });
+
 });
