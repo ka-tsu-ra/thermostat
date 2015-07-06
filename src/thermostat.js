@@ -13,11 +13,12 @@ Thermostat.prototype.down = function(num) {
   } else {
     this.temp -= num;
   }
-}
+};
 
+Thermostat.prototype.powerSaveOff = function() {
+  this.powerSave = false;
+};
 
-
-//
-// Thermostat.prototype.display = function() {
-//     return("20");
-//   };
+Thermostat.prototype.powerSaveOn = function() {
+  this.powerSave = true;
+};

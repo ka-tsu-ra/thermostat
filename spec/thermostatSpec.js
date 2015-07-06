@@ -20,7 +20,7 @@ describe('Thermostat', function() {
 
   describe('can', function() {
     it('increase the temperature', function() {
-      thermostat.temp = 10
+      thermostat.temp = 10;
       thermostat.up(5);
       expect(thermostat.temp).toEqual(15);
     });
@@ -28,7 +28,7 @@ describe('Thermostat', function() {
 
   describe('can', function() {
     it('increase the temperature', function() {
-      thermostat.temp = 20
+      thermostat.temp = 20;
       thermostat.down(11);
       expect(thermostat.temp).toEqual(10);
     });
@@ -36,6 +36,22 @@ describe('Thermostat', function() {
 
   describe('at the start, powersaving mode is', function() {
     it('on', function() {
+      expect(thermostat.powerSave).toEqual(true);
+    });
+  });
+
+  describe('powersaving mode can be turned', function() {
+    it('off', function() {
+      thermostat.powerSave = true;
+      thermostat.powerSaveOff();
+      expect(thermostat.powerSave).toEqual(false);
+    });
+  });
+
+  describe('powersaving mode can be turned', function() {
+    it('on', function() {
+      thermostat.powerSave = false;
+      thermostat.powerSaveOn();
       expect(thermostat.powerSave).toEqual(true);
     });
   });
