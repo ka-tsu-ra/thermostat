@@ -80,4 +80,12 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('it has a powersave', function() {
+    it('toggle', function() {
+      thermostat.powerSave = true;
+      thermostat.toggle();
+      expect(thermostat.powerSave).toEqual(false);
+    });
+  });
+
 });
