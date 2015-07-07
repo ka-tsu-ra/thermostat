@@ -79,12 +79,4 @@ describe('Thermostat', function() {
       expect(thermostat.powerSave).toEqual(true);
     });
   });
-
-  describe('the thermostat', function() {
-    it('knows what colour it should be', function() {
-      thermostat.temp = 26;
-      expect(thermostat.colour).toEqual('red');
-    });
-  });
-
 });
