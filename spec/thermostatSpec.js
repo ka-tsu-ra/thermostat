@@ -13,22 +13,22 @@ describe('Thermostat', function() {
 
   describe('can', function() {
     it('increase the temperature', function() {
-      thermostat.up(5);
-      expect(thermostat.temp).toEqual(25);
+      thermostat.up();
+      expect(thermostat.temp).toEqual(21);
     });
   });
 
   describe('can', function() {
     it('decrease the temperature', function() {
-      thermostat.down(5);
-      expect(thermostat.temp).toEqual(15);
+      thermostat.down();
+      expect(thermostat.temp).toEqual(19);
     });
   });
 
-  describe('can', function() {
-    it('decrease the temperature', function() {
-      thermostat.temp = 20;
-      thermostat.down(11);
+  describe('has', function() {
+    it('a minimum temp of 10', function() {
+      thermostat.temp = 10;
+      thermostat.down();
       expect(thermostat.temp).toEqual(10);
     });
   });
@@ -57,7 +57,8 @@ describe('Thermostat', function() {
 
   describe('when in power saving mode', function() {
     it('has a max temperature of 25', function() {
-      thermostat.up(6);
+      thermostat.temp = 25;
+      thermostat.up();
       expect(thermostat.temp).toEqual(25);
     });
   });
@@ -65,7 +66,8 @@ describe('Thermostat', function() {
   describe('when not in power saving mode', function() {
     it('has a max temperature of 32', function() {
       thermostat.powerSave = false;
-      thermostat.up(14);
+      thermostat.temp = 32;
+      thermostat.up();
       expect(thermostat.temp).toEqual(32);
     });
   });
