@@ -14,7 +14,7 @@
   </script>
     <button onclick="thermostat.up(); document.getElementById('temp').innerHTML = thermostat.temp">Up</button>
     <button onclick="thermostat.down(); document.getElementById('temp').innerHTML = thermostat.temp">Down</button>
-    <input type="checkbox" name="PowerSave" onchange="thermostat.toggle(); document.getElementById('temp')innerHTML = thermostat.temp" checked>Powersave</input>
+    <input type="checkbox" onchange="thermostat.toggle(); document.getElementById('temp').innerHTML = thermostat.temp" checked>Powersave</input>
 </head>
 <body>
 
