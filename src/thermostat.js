@@ -42,14 +42,4 @@ Thermostat.prototype.toggle = function() {
       this.temp = 25;
     };
   };
-
-  Thermostat.prototype.colour = function() {
-    if (this.temp < 18) {
-      return('green');
-    } else if (18 <= this.temp < 25) {
-      return('yellow');
-    } else if (this.temp >= 25) {
-      return('red');
-    };
-  };
 };
