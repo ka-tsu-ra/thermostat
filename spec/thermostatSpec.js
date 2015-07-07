@@ -80,4 +80,11 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('the thermostat', function() {
+    it('knows what colour it should be', function() {
+      thermostat.temp = 26;
+      expect(thermostat.colour).toEqual('red');
+    });
+  });
+
 });
