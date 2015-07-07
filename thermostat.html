@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <link rel='stylesheet' type='text/css' href="src/stylesheets/index.css">
+</head>
   <h1 style="color: blue">Thermostat</h1>
 
-  <div id="temp"></div>
+  <div id="temp" class="yellow"></div>
   <button id="up">Up</button>
   <button id="down">Down</button>
-  <input type="checkbox" onchange="toggle()" checked>Powersave</input>
+  <input type="checkbox" id="toggle" checked>Powersave</input>
 
 
-</head>
+
 <body>
 
 <script type="text/JavaScript" src="src/thermostat.js"></script>
