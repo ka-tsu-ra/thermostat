@@ -1,5 +1,5 @@
 var thermostat = new Thermostat();
-$( document ).ready(function() {
+
 
   colour = function(){
     if(thermostat.temp < 18) {
@@ -32,19 +32,3 @@ $( document ).ready(function() {
     thermostat.toggle();
     refreshTemp();
   });
-
-
-
-
-
- // colour = function(){
- //   if(thermostat.temp < 18) {
- //     document.getElementById("temp").className = 'green';
- //   } else if(thermostat.temp < 25) {
- //     document.getElementById("temp").className = 'orange';
- //   } else {
- //     document.getElementById("temp").className = 'red';
- //   };
- // };
-
-});
