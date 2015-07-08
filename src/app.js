@@ -16,16 +16,15 @@ document.getElementById("down").onclick = function(){
 
 document.getElementById("toggle").onchange = function(){
   thermostat.toggle();
-  colour();
   document.getElementById("temp").innerHTML = thermostat.temp;
 };
 
 colour = function(){
   if(thermostat.temp < 18) {
     document.getElementById("temp").className = 'green';
-  } else if(18 <= thermostat.temp < 25) {
+  } else if(thermostat.temp < 25) {
     document.getElementById("temp").className = 'orange';
-  } else if(thermostat.temp >= 25) {
+  } else {
     document.getElementById("temp").className = 'red';
   };
 };
