@@ -16,8 +16,9 @@ $( document ).ready(function() {
     $("#temp").html(thermostat.temp);
   };
 
-  var cityWeather =  function () {
-    $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + 'London' + '&units=metric',
+  var cityWeather =  function(city) {
+    var city = "London";
+    $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric',
       function (data) {
   $('#cityWeather').html(data.list[0].main.temp)
   });
@@ -40,14 +41,4 @@ $( document ).ready(function() {
     thermostat.toggle();
     refreshTemp();
   });
-
-  // function cityWeather() {$.getJSON('http://api.openweathermap.org/data/2.5/find?q=London&units=metric',
-  //  {},
-  //  function (response) {
-  //    return(response.list[0].main.temp);
-  //  });
-  // };
-  //
-  // $("#cityWeather").html(cityWeather);
-
 });
