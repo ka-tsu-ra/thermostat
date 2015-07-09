@@ -1,5 +1,5 @@
 var thermostat = new Thermostat();
-
+$( document ).ready(function() {
 
   colour = function(){
     if(thermostat.temp < 18) {
@@ -16,7 +16,15 @@ var thermostat = new Thermostat();
     $("#temp").html(thermostat.temp);
   };
 
+  var cityWeather =  function () {
+    $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + 'London' + '&units=metric',
+      function (data) {
+  $('#cityWeather').html(data.list[0].main.temp)
+  });
+  };
+
   refreshTemp();
+  cityWeather();
 
   $("#up").click(function() {
     thermostat.up();
@@ -32,3 +40,14 @@ var thermostat = new Thermostat();
     thermostat.toggle();
     refreshTemp();
   });
+
+  // function cityWeather() {$.getJSON('http://api.openweathermap.org/data/2.5/find?q=London&units=metric',
+  //  {},
+  //  function (response) {
+  //    return(response.list[0].main.temp);
+  //  });
+  // };
+  //
+  // $("#cityWeather").html(cityWeather);
+
+});
