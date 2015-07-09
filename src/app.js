@@ -16,13 +16,25 @@ $( document ).ready(function() {
     $("#temp").html(thermostat.temp);
   };
 
+
+
   var cityWeather =  function(city) {
-    var city = "London";
+
     $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric',
       function (data) {
-  $('#cityWeather').html(data.list[0].main.temp)
-  });
+        $('#cityWeather').html(data.list[0].main.temp)
+    });
+
+    // the function(data) {} part is the 'callback' - the function that runs when ajax call is finished. Part of the JavaScript asynchronous thing.
   };
+
+  $('#cityId').submit(function(e) {
+    e.preventDefault();
+    var city = $('#cityName').val();
+    cityWeather(city);
+  });
+
+
 
   refreshTemp();
   cityWeather();
